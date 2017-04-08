@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:text="Theme"
+            android:textSize="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:id="@+id/textView"
+            android:gravity="center"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:id="@+id/spinner"
+            android:layout_weight="1" android:entries="@array/country_arrays"
+            android:prompt="@string/country_prompt"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:text="Time for each movement"
+            android:textSize="25dp"
+            android:layout_marginLeft="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:gravity="center"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/seekBar4"
+            android:layout_weight="1" />
+    </LinearLayout>
+</LinearLayout>
