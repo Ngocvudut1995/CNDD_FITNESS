@@ -7,7 +7,7 @@
 
     <string name="nav_item_home">Home</string>
     <string name="nav_item_friends">Friends</string>
-    <string name="nav_item_notifications">Messages</string>
+    <string name="nav_item_setting">Setting</string>
     <string name="country_prompt">Chọn Tỉnh/Thành Phố</string>
     <string-array name="country_arrays">
         <item>Hà Nội</item>
@@ -16,11 +16,16 @@
         <item>Đà Nẵng</item>
         <item>Cần Thơ</item>
     </string-array>
+    <string-array name="color_arrays">
+        <item>Blue</item>
+        <item>Red</item>
+        <item>Green</item>
+    </string-array>
     <!-- navigation drawer item labels  -->
     <string-array name="nav_drawer_labels">
         <item>@string/nav_item_home</item>
         <item>@string/nav_item_friends</item>
-        <item>@string/nav_item_notifications</item>
+        <item>@string/nav_item_setting</item>
     </string-array>
 
     <string name="title_messages">Messages</string>

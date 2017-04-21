@@ -14,8 +14,9 @@ import android.view.View;
 import com.example.vudang.fitness.Activity.FragmentDrawer;
 import com.example.vudang.fitness.Activity.FriendFragment;
 import com.example.vudang.fitness.Activity.HomeFragment;
+import com.example.vudang.fitness.Activity.SettingFragment;
 
-public class MainActivity extends AppCompatActivity  implements FragmentDrawer.FragmentDrawerListener {
+public class MainActivity extends AppCompatActivity  implements FragmentDrawer.FragmentDrawerListener{
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
 
@@ -70,10 +71,10 @@ public class MainActivity extends AppCompatActivity  implements FragmentDrawer.F
                 fragment = new FriendFragment();
                 title = getString(R.string.title_friends);
                 break;
-//            case 2:
-//                fragment = new MessagesFragment();
-//                title = getString(R.string.title_messages);
-//                break;
+            case 2:
+                fragment = new SettingFragment();
+                title = "Setting";
+                break;
             default:
                 break;
         }

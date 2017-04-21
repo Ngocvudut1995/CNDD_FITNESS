@@ -1,68 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+<GridLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="horizontal"
     >
-
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="55dp">
-
+    android:layout_columnWeight="1"
+    android:layout_rowWeight="1"
+    android:layout_height="161dp" >
         <TextView
-            android:text="Theme"
-            android:textSize="25dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/textView"
-            android:gravity="center"/>
-
-        <Spinner
+            android:text="Blank"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:id="@+id/spinner"
-            android:layout_weight="1" android:entries="@array/country_arrays"
-            android:prompt="@string/country_prompt"
-            />
+            android:textSize="40dp"
+            android:textAlignment="center"
+            android:gravity="bottom"
+            android:paddingBottom="30dp"/>
+    <!--<Chronometer-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:id="@+id/chronometer2"-->
+    <!--android:textSize="50dp"-->
+    <!--android:textAlignment="center"-->
+    <!--android:gravity="center"-->
+    <!--android:countDown="true"-->
+    <!--android:layout_weight="1" />-->
     </LinearLayout>
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="55dp">
+    android:layout_columnWeight="1"
+    android:layout_rowWeight="1"
+    android:layout_height="258dp" >
 
-        <TextView
-            android:text="Time for each movement"
-            android:textSize="25dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-
-            android:gravity="center"/>
-
-
+    <!--<ImageView-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="match_parent"-->
+    <!--app:srcCompat="@mipmap/ic_workout"-->
+    <!--android:id="@+id/imageView2"-->
+    <!--android:layout_weight="1" />-->
     </LinearLayout>
+
     <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="55dp">
-
-
-        <SeekBar
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/seekBar4"
-            android:layout_weight="1"
-            android:max="100"/>
-        <TextView
-            android:text=""
-            android:textSize="25dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="50dp"
-            android:layout_height="match_parent"
-            android:id="@+id/txt_time"
-            android:gravity="center"/>
+    android:layout_columnWeight="1"
+    android:layout_rowWeight="1"
+    >
+    <TextView
+    android:text="Blank"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:textSize="40dp"
+    android:textAlignment="center"
+    android:gravity="bottom"
+    android:paddingBottom="30dp"/>
     </LinearLayout>
-</LinearLayout>
+</GridLayout>
+<!--<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--xmlns:app="http://schemas.android.com/apk/res-auto"-->
+    <!--xmlns:tools="http://schemas.android.com/tools"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:rowCount="3"-->
+    <!--android:columnCount="1"-->
+    <!--android:orientation="vertical"-->
+    <!--&gt;-->
+    <!--<LinearLayout-->
+        <!--android:layout_columnWeight="1"-->
+        <!--android:layout_rowWeight="1"-->
+        <!--android:layout_height="161dp" >-->
+
+        <!--&lt;!&ndash;<Chronometer&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/chronometer2"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textSize="50dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textAlignment="center"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:countDown="true"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_weight="1" />&ndash;&gt;-->
+    <!--</LinearLayout>-->
+    <!--<LinearLayout-->
+        <!--android:layout_columnWeight="1"-->
+        <!--android:layout_rowWeight="1"-->
+        <!--android:layout_height="258dp" >-->
+
+        <!--<ImageView-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="match_parent"-->
+            <!--app:srcCompat="@mipmap/ic_workout"-->
+            <!--android:id="@+id/imageView2"-->
+            <!--android:layout_weight="1" />-->
+    <!--</LinearLayout>-->
+
+    <!--<LinearLayout-->
+        <!--android:layout_columnWeight="1"-->
+        <!--android:layout_rowWeight="1"-->
+        <!--&gt;-->
+        <!--<TextView-->
+            <!--android:text="Blank"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="match_parent"-->
+            <!--android:textSize="40dp"-->
+            <!--android:textAlignment="center"-->
+            <!--android:gravity="bottom"-->
+            <!--android:paddingBottom="30dp"/>-->
+    <!--</LinearLayout>-->
+
+<!--</GridLayout>-->

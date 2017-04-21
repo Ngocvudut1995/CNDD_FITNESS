@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     >
@@ -12,10 +13,11 @@
         <TextView
             android:text="Theme"
             android:textSize="25dp"
-            android:layout_marginLeft="30dp"
-            android:layout_width="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_width="100dp"
             android:layout_height="match_parent"
             android:id="@+id/textView"
+            android:textAlignment="textStart"
             android:gravity="center"/>
 
         <Spinner
@@ -36,7 +38,7 @@
         <TextView
             android:text="Time for each movement"
             android:textSize="25dp"
-            android:layout_marginLeft="30dp"
+            android:layout_marginLeft="10dp"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
 
@@ -53,7 +55,98 @@
         <SeekBar
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/seekBar4"
-            android:layout_weight="1" />
+            android:id="@+id/seekBar_time"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:max="100"/>
+        <TextView
+            android:text=""
+            android:textSize="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txt_time"
+            android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:text="Break time"
+            android:textSize="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:gravity="center"/>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+
+        <SeekBar
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="50dp"
+            android:id="@+id/seekBar_breaktime"
+            android:layout_weight="1"
+            android:max="30"/>
+        <TextView
+            android:text=""
+            android:textSize="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:id="@+id/txt_breaktime"
+            android:gravity="center"/>
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:text="Sound"
+            android:textSize="25dp"
+            android:textAlignment="textStart"
+            android:layout_marginLeft="10dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:gravity="center"/>
+        <ToggleButton
+            android:layout_marginLeft="25dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="55dp">
+
+        <TextView
+            android:text="Color"
+            android:textSize="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:textAlignment="textStart"
+            android:gravity="center"/>
+
+        <Spinner
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginRight="25dp"
+            android:id="@+id/spinner_color"
+            android:layout_weight="1" android:entries="@array/color_arrays"
+            android:prompt="@string/country_prompt"
+            />
     </LinearLayout>
 </LinearLayout>

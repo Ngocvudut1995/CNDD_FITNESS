@@ -53,11 +53,7 @@ public class HomeFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 FriendFragment fragment = null;
-                String title = getString(R.string.app_name);
-                        fragment = new FriendFragment();
-                        title = getString(R.string.title_friends);
-
-//
+                fragment = new FriendFragment();
 
                 if (fragment != null) {
                     FragmentManager fragmentManager = getFragmentManager();
