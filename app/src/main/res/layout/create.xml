@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFDAA344">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="left"
+            android:background="#448fda"
+            android:text="0/12"
+            android:textAlignment="center"
+            android:textSize="30dp" />
+
+        <Button
+            android:id="@+id/btnSave"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="right"
+            android:layout_marginLeft="130dp"
+            android:layout_marginRight="0dp"
+            android:background="@android:color/holo_blue_dark"
+            android:text="Save" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <CheckBox
+            android:id="@+id/cb1"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <CheckBox
+            android:id="@+id/cb2"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <CheckBox
+            android:id="@+id/cb3"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <CheckBox
+            android:id="@+id/cb4"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <CheckBox
+            android:id="@+id/cb5"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"/>
+
+        <ImageView
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="10dp"
+            app:srcCompat="@mipmap/ic_launcher_round" />
+
+        <CheckBox
+            android:id="@+id/cb6"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="10dp"/>
+    </LinearLayout>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp">
+
+        <Button
+            android:id="@+id/btnPrev"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="90dp"
+            android:text="Prev" />
+
+        <Button
+            android:id="@+id/btnNext"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginRight="90dp"
+            android:text="next" />
+    </LinearLayout>
+
+
+</LinearLayout>
