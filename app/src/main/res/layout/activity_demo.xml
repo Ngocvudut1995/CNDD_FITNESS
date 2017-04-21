@@ -10,54 +10,6 @@ android:columnCount="1"
 android:orientation="vertical"
 tools:context="com.example.vudang.fitness.Activity.HomeFragment">
 
-<!--<RelativeLayout-->
-    <!--android:layout_columnWeight="1"-->
-    <!--android:layout_rowWeight="1"-->
-    <!--android:layout_height="161dp" >-->
-    <!--<TextView-->
-        <!--android:text="Blank"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:textSize="40dp"-->
-        <!--android:textAlignment="center"-->
-        <!--android:gravity="bottom"-->
-        <!--android:paddingBottom="30dp"/>-->
-    <!--&lt;!&ndash;<Chronometer&ndash;&gt;-->
-    <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:id="@+id/chronometer2"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:textSize="50dp"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:textAlignment="center"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:gravity="center"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:countDown="true"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:layout_weight="1" />&ndash;&gt;-->
-<!--</RelativeLayout>-->
-<!--<RelativeLayout-->
-    <!--android:layout_columnWeight="1"-->
-    <!--android:layout_rowWeight="1"-->
-    <!--android:layout_height="258dp" >-->
-
-    <!--&lt;!&ndash;<ImageView&ndash;&gt;-->
-    <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
-    <!--&lt;!&ndash;app:srcCompat="@mipmap/ic_workout"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:id="@+id/imageView2"&ndash;&gt;-->
-    <!--&lt;!&ndash;android:layout_weight="1" />&ndash;&gt;-->
-<!--</RelativeLayout>-->
-
-<!--<LinearLayout-->
-    <!--android:layout_columnWeight="1"-->
-    <!--android:layout_rowWeight="1"-->
-    <!--&gt;-->
-    <!--<TextView-->
-        <!--android:text="Blank"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"-->
-        <!--android:textSize="40dp"-->
-        <!--android:textAlignment="center"-->
-        <!--android:gravity="bottom"-->
-        <!--android:paddingBottom="30dp"/>-->
-<!--</LinearLayout>-->
     <LinearLayout
         android:layout_columnWeight="1"
         android:layout_rowWeight="1"

@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class DemoActivity extends AppCompatActivity {
    // private Chronometer chronometer;
     TextView txt_countdown;
-    private static final String FORMAT = "%02d:%02d:%02d";
+    private static final String FORMAT = "%02d";
 
     int seconds , minutes;
     @Override
@@ -27,13 +27,13 @@ public class DemoActivity extends AppCompatActivity {
         new CountDownTimer(30000, 1000) { // adjust the milli seconds here
 
             public void onTick(long millisUntilFinished) {
-
-                txt_countdown.setText(""+String.format(FORMAT,
-                        TimeUnit.MILLISECONDS.toHours(millisUntilFinished),
-                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(
-                                TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
-                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
-                                TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
+                txt_countdown.setText(""+millisUntilFinished/1000);
+//                txt_countdown.setText(""+String.format(FORMAT,
+//                        TimeUnit.MILLISECONDS.toHours(millisUntilFinished),
+//                        TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished) - TimeUnit.HOURS.toMinutes(
+//                                TimeUnit.MILLISECONDS.toHours(millisUntilFinished)),
+//                        TimeUnit.MILLISECONDS.toSeconds(millisUntilFinished) - TimeUnit.MINUTES.toSeconds(
+//                                TimeUnit.MILLISECONDS.toMinutes(millisUntilFinished))));
             }
 
             public void onFinish() {
