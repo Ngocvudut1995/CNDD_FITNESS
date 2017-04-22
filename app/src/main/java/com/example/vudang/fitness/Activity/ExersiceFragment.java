@@ -1,10 +1,9 @@
 package com.example.vudang.fitness.Activity;
 
-import android.app.ActionBar;
+
 import android.app.Activity;
-import android.content.Context;
-import android.net.Uri;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -12,32 +11,31 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
-import android.widget.ImageButton;
+import android.widget.SeekBar;
 import android.widget.TextView;
 
 import com.example.vudang.fitness.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link Home.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link Home#newInstance} factory method to
- * create an instance of this fragment.
  */
-public class HomeFragment extends Fragment {
-    public HomeFragment() {
+public class ExersiceFragment extends Fragment {
+
+    TextView txt_countdown;
+
+    public ExersiceFragment() {
         // Required empty public constructor
     }
-    private ImageButton btn_play;
-    private View containerView;
+
+
     private FragmentDrawer.FragmentDrawerListener drawerListener;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
     }
+
     public void setDrawerListener(FragmentDrawer.FragmentDrawerListener listener) {
         this.drawerListener = listener;
     }
@@ -45,13 +43,16 @@ public class HomeFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_home, container, false);
-        btn_play = (ImageButton) rootView.findViewById(R.id.btn_play);
-        btn_play.setOnClickListener(new View.OnClickListener(){
+        View rootView = inflater.inflate(R.layout.activity_demo, container, false);
+        txt_countdown = (TextView) rootView.findViewById(R.id.txt_countdown);
+        new CountDownTimer(30000, 1000) { // adjust the milli seconds here
 
+            public void onTick(long millisUntilFinished) {
+                txt_countdown.setText(""+millisUntilFinished/1000);
+//
+            }
 
-            @Override
-            public void onClick(View view) {
+            public void onFinish() {
                 ExersiceFragment fragment = null;
                 fragment = new ExersiceFragment();
 
@@ -61,11 +62,12 @@ public class HomeFragment extends Fragment {
                     fragmentTransaction.replace(R.id.container_body, fragment);
                     fragmentTransaction.commit();
 
-                    // set the toolbar title
+               //     set the toolbar title
                     ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Excercise");
-                }
+               // txt_countdown.setText("done!");
             }
-        });
+            }
+        }.start();
         // Inflate the layout for this fragment
         return rootView;
     }
