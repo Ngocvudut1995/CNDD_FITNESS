@@ -44,17 +44,15 @@
         android:layout_height="200dp">
 
 
-        <ImageButton
-
+        <Button
+            android:text="Button"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:id="@+id/btn_play"
-            android:background="@mipmap/ic_clock"
-            app:srcCompat="@mipmap/ic_launcher_play"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true" />
+            android:id="@+id/button_coundown"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:background="@android:color/transparent"
+            android:textSize="30sp" />
     </RelativeLayout>
 
     <GridLayout
@@ -105,7 +103,7 @@
 
                     <TextView
                         android:layout_width="match_parent"
-                        android:text="Excersice"
+                        android:text="Ready for"
                         android:textSize="25dp"
                         android:layout_rowSpan="1"
                         android:textAlignment="center"
@@ -121,7 +119,7 @@
                         android:textAlignment="center"
                         android:background="@android:color/transparent"
                         android:layout_gravity="fill_horizontal"
-                        android:id="@+id/button2"
+                        android:id="@+id/btn_exersice"
                         android:textColor="#0263da"
                         />
                 </GridLayout>

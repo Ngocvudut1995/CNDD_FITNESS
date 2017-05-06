@@ -11,14 +11,7 @@ import android.view.ViewGroup;
 
 import com.example.vudang.fitness.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link FriendFragment.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link FriendFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class FriendFragment extends Fragment {
     public FriendFragment() {
         // Required empty public constructor

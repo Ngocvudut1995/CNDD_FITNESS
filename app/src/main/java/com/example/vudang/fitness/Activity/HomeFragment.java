@@ -18,14 +18,9 @@ import android.widget.TextView;
 
 import com.example.vudang.fitness.R;
 
-/**
- * A simple {@link Fragment} subclass.
- * Activities that contain this fragment must implement the
- * {@link Home.OnFragmentInteractionListener} interface
- * to handle interaction events.
- * Use the {@link Home#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.ArrayList;
+
+
 public class HomeFragment extends Fragment {
     public HomeFragment() {
         // Required empty public constructor
@@ -52,8 +47,15 @@ public class HomeFragment extends Fragment {
 
             @Override
             public void onClick(View view) {
-                ExersiceFragment fragment = null;
-                fragment = new ExersiceFragment();
+                RestFragment fragment = null;
+                String list__a = "R.drawable.fitness,R.drawable.ic_action_name";
+                String[] split = list__a.split(",");
+                ArrayList list_image = new ArrayList();
+                list_image.add("fitness");
+                list_image.add("fitness2");
+                list_image.add("fitness3");
+                list_image.add("fitness4");
+                fragment = new RestFragment(list_image);
 
                 if (fragment != null) {
                     FragmentManager fragmentManager = getFragmentManager();

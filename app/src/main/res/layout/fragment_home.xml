@@ -50,7 +50,7 @@
 
             <GridLayout
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="match_parent"
                 android:columnCount="2"
                 android:rowCount="1"
                 android:layout_gravity="bottom"

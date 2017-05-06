@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:rowCount="6"
+    android:columnCount="1"
+    android:orientation="vertical"
+    tools:context="com.example.vudang.fitness.Activity.HomeFragment">
+
+    <LinearLayout
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        android:weightSum="1">
+
+        <TextView
+            android:text="Blank"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="40dp"
+            android:id="@+id/txt_countdown"
+            android:textAlignment="center"
+            android:gravity="bottom"
+            android:paddingBottom="30dp"
+            android:layout_weight="1"
+            android:paddingTop="30dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="4"
+        >
+
+        <ImageView
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+
+            android:id="@+id/image_exersice"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_columnWeight="1"
+        android:layout_rowWeight="1"
+        >
+
+        <TextView
+            android:text="Blank"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:textSize="40dp"
+            android:id="@+id/text_exersice"
+            android:textAlignment="center"
+            android:gravity="bottom"
+            android:paddingBottom="30dp"/>
+    </LinearLayout>
+</GridLayout>
