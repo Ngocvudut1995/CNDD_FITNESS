@@ -15,15 +15,32 @@ import com.example.vudang.fitness.Activity.FragmentDrawer;
 import com.example.vudang.fitness.Activity.FriendFragment;
 import com.example.vudang.fitness.Activity.HomeFragment;
 import com.example.vudang.fitness.Activity.SettingFragment;
+import com.example.vudang.fitness.Model.DBHandler;
+import com.example.vudang.fitness.Model.MyApp;
+import com.example.vudang.fitness.Model.Setting;
+
+import java.util.Set;
 
 public class MainActivity extends AppCompatActivity  implements FragmentDrawer.FragmentDrawerListener{
     private Toolbar mToolbar;
     private FragmentDrawer drawerFragment;
+    MyApp myapp;
+
+    @Override
+    protected void onStop() {
+        DBHandler db = new DBHandler(this);
+        Setting setting = myapp.getSetting();
+        db.setSetting(setting);
+        super.onStop();
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        DBHandler db = new DBHandler(this);
+        myapp = ((MyApp) getApplicationContext());
+        myapp.setSetting(db.getSetting());
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
@@ -33,6 +50,7 @@ public class MainActivity extends AppCompatActivity  implements FragmentDrawer.F
         drawerFragment.setDrawerListener(this);
         displayView(0);
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -42,14 +60,22 @@ public class MainActivity extends AppCompatActivity  implements FragmentDrawer.F
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
+
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            return true;
+            Fragment fragment = null;
+            fragment = new SettingFragment();
+            String title = "Setting";
+            if (fragment != null) {
+                FragmentManager fragmentManager = getSupportFragmentManager();
+                FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                fragmentTransaction.replace(R.id.container_body, fragment);
+                fragmentTransaction.commit();
+                // set the toolbar title
+                getSupportActionBar().setTitle(title);
+            }
         }
 
         return super.onOptionsItemSelected(item);
@@ -73,7 +99,7 @@ public class MainActivity extends AppCompatActivity  implements FragmentDrawer.F
                 break;
             case 2:
                 fragment = new SettingFragment();
-                title = "Setting";
+                title = getString(R.string.title_setting);
                 break;
             default:
                 break;

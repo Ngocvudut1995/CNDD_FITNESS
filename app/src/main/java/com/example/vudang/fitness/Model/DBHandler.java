@@ -30,14 +30,26 @@ public class DBHandler extends SQLiteOpenHelper {
     SQLiteDatabase db;
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String insert_table = "CREATE TABLE Exersice (IDExersice INTEGER PRIMARY KEY AUTOINCREMENT,NameExersice TEXT," +
+        String create_table = "CREATE TABLE Exersice (IDExersice INTEGER PRIMARY KEY AUTOINCREMENT,NameExersice TEXT," +
                 "ListItemExersice  TEXT" + ")";
-        db.execSQL(insert_table);
+        db.execSQL(create_table);
         String insert = "INSERT INTO Exersice (NameExersice,ListItemExersice)" +
                 "VALUES ( 'Full Body', '1,2,3,4,5,6')";
         db.execSQL(insert);
-        insert_table = "CREATE TABLE ItemExersice (IDItemExersice INTEGER PRIMARY KEY AUTOINCREMENT,NameItemExersice TEXT," +
+        create_table = "CREATE TABLE ItemExersice (IDItemExersice INTEGER PRIMARY KEY AUTOINCREMENT,NameItemExersice TEXT," +
                                "Image  TEXT)";
+        db.execSQL(create_table);
+        for(int i = 0;i<5;i++){
+            insert ="INSERT INTO ItemExersice (NameItemExersice,Image) " +
+                    "VALUES ( 'Exersice "+i+1+"', 'fitneess"+i+1+"')";
+            db.execSQL(insert);
+        }
+        create_table = "CREATE TABLE Setting (TimeRunning INTEGER ,TimeBreaking INTEGER,Sound INTEGER, " +
+                "Color  TEXT)";
+        db.execSQL(create_table);
+        insert ="INSERT INTO Setting (TimeRunning,TimeBreaking,Sound,Color) " +
+                "VALUES (30, 10,0,'red')";
+        db.execSQL(insert);
         this.db = db;
       //  db.close();
 
@@ -83,5 +95,51 @@ public class DBHandler extends SQLiteOpenHelper {
         }
         // return contact list
         return List_Exersice;
+    }
+    public boolean setSetting(Setting setting){
+        String query = "Update Setting set TimeRunning = "+setting.getTime_running()+"," +
+                "TimeBreaking = "+setting.getTime_break()+",Sound ="+setting.isSound()+" " +
+                ",Color = '"+setting.getColor()+"'";
+        try {
+
+            if(db == null || !db.isOpen()) {
+                db = getReadableDatabase();
+            }
+            db.execSQL(query);
+            return true;
+        }catch (Exception ex){
+            return false;
+        }
+
+
+//        ContentValues values = new ContentValues();
+//        values.put("TimeRunning", setting.getTime_running());
+//        values.put("TimeBreaking", setting.getTime_break());
+//        values.put("Sound", setting.isSound());
+//        values.put("Color", setting.getColor());
+//// updating row
+//        return db.update("Setting", values, "ID" + " = ?",
+//                new String[]{String.valueOf(shop.getId())});
+    }
+    public Setting getSetting(){
+        Setting setting = new Setting();
+        String selectQuery = "SELECT * FROM Setting" ;
+        if(db == null || !db.isOpen()) {
+            db = getReadableDatabase();
+        }
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+
+
+                setting.setTime_running(cursor.getInt(0));
+                setting.setTime_break(cursor.getInt(1));
+                setting.setSound(cursor.getInt(2)>0);
+            setting.setColor(cursor.getString(3));
+
+
+        }
+
+        return setting;
     }
 }

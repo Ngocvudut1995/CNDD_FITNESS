@@ -19,6 +19,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.vudang.fitness.Model.MyApp;
 import com.example.vudang.fitness.R;
 
 import java.io.File;
@@ -49,22 +50,24 @@ public class RestFragment extends Fragment {
     Button button_coundown,btn_exersice;
     ImageView view_exersice;
     MediaPlayer mp;
+    MyApp myapp;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_rest, container, false);
+        myapp = (MyApp) getActivity().getApplicationContext();
         button_coundown = (Button) rootView.findViewById(R.id.button_coundown);
         number_text = (TextView) rootView.findViewById(R.id.number_text);
         btn_exersice = (Button) rootView.findViewById(R.id.btn_exersice);
         mp = MediaPlayer.create(this.getActivity(),R.raw.track1);
-        mp.start();
+        //mp.start();
         String text = getContext().getPackageName();
         number_text.setText(""+id_exersice+"/"+list_image.size());
         btn_exersice.setText("Exersice"+id_exersice);
         int imageKey = getResources().getIdentifier(list_image.get(id_exersice), "drawable", getContext().getPackageName());
        // view_exersice =(ImageView) rootView.findViewById(R.id.image_exersice);
       //  view_exersice.setImageResource(imageKey);
-        new CountDownTimer(11000, 1000) { // adjust the milli seconds here
+        new CountDownTimer(myapp.getSetting().getTime_break()*1000, 1000) { // adjust the milli seconds here
 
             public void onTick(long millisUntilFinished) {
                 button_coundown.setText(""+millisUntilFinished/1000);

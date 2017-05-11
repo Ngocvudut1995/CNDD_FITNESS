@@ -1,5 +1,6 @@
 package com.example.vudang.fitness;
 
+import android.app.Application;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.design.widget.FloatingActionButton;
@@ -17,6 +18,7 @@ import android.widget.TextView;
 
 import com.example.vudang.fitness.Model.DBHandler;
 import com.example.vudang.fitness.Model.Exersice;
+import com.example.vudang.fitness.Model.MyApp;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -49,6 +51,9 @@ public class DemoActivity extends AppCompatActivity {
 //            }
 //        }.start();
         DBHandler db = new DBHandler(this);
+       MyApp myapp = ((MyApp) getApplicationContext());
+        myapp.setSetting(db.getSetting());
+
         // Reading all shops
         //db.addExersice(new Exersice(0,"Full Body","1,2,3,4,5"));
         //  db.addExersice(new Exersice(0,"Stretch Easy","1,2,3,4,5"));

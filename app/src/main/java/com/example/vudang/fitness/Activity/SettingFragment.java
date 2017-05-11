@@ -15,15 +15,14 @@ import android.widget.ImageButton;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+import com.example.vudang.fitness.Model.MyApp;
+import com.example.vudang.fitness.Model.Setting;
 import com.example.vudang.fitness.R;
 
-/**
-
- */
 public class SettingFragment extends Fragment implements SeekBar.OnSeekBarChangeListener {
     private SeekBar bar_time_burning, bar_break_time;
     private TextView txt_time_buring, txt_break_time;
-
+    MyApp myapp;
     public SettingFragment() {
         // Required empty public constructor
     }
@@ -45,18 +44,18 @@ public class SettingFragment extends Fragment implements SeekBar.OnSeekBarChange
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_setting, container, false);
+        myapp = ((MyApp) getActivity().getApplicationContext());
         bar_time_burning = (SeekBar) rootView.findViewById(R.id.seekBar_time);
         txt_time_buring = (TextView) rootView.findViewById(R.id.txt_time);
-        txt_time_buring.setText("30");
+        txt_time_buring.setText(""+ myapp.getSetting().getTime_running());
         bar_break_time = (SeekBar) rootView.findViewById(R.id.seekBar_breaktime);
         txt_break_time = (TextView) rootView.findViewById(R.id.txt_breaktime);
-        txt_break_time.setText("10");
+        txt_break_time.setText(""+ myapp.getSetting().getTime_break());
         bar_time_burning.setOnSeekBarChangeListener(this);
-        bar_time_burning.setProgress(30);
-        bar_break_time.setProgress(10);
+        bar_time_burning.setProgress(myapp.getSetting().getTime_running());
         bar_break_time.setOnSeekBarChangeListener(this);
-        bar_time_burning.setProgress(30);
-        bar_break_time.setProgress(10);
+        bar_break_time.setProgress(myapp.getSetting().getTime_break());
+
         // Inflate the layout for this fragment
         return rootView;
     }
@@ -76,15 +75,12 @@ public class SettingFragment extends Fragment implements SeekBar.OnSeekBarChange
 
         switch (seekBar.getId()) {
             case R.id.seekBar_time:
-                process = i;
                 txt_time_buring.setText(""+i);
-//                TextView t = (TextView) getActivity().findViewById(R.id.txt_time);
-//                t.setText(process);
+                myapp.getSetting().setTime_running(i);
                 break;
             case R.id.seekBar_breaktime:
                 txt_break_time.setText(""+i);
-                //txt_break_time.setText(process);
-               // txt_break_time.setText(process);
+                myapp.getSetting().setTime_break(i);
                 break;
             default:break;
         }
