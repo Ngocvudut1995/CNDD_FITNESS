@@ -51,10 +51,11 @@ public class HomeFragment extends Fragment {
                 String list__a = "R.drawable.fitness,R.drawable.ic_action_name";
                 String[] split = list__a.split(",");
                 ArrayList list_image = new ArrayList();
-                list_image.add("fitness");
+                list_image.add("fitness1");
                 list_image.add("fitness2");
                 list_image.add("fitness3");
                 list_image.add("fitness4");
+                list_image.add("fitness5");
                 fragment = new RestFragment(list_image);
 
                 if (fragment != null) {

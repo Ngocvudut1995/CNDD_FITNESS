@@ -26,7 +26,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/btn_play"
-            android:background="@mipmap/ic_clock"
+            style="?android:attr/borderlessButtonStyle"
+            android:background="@drawable/clock"
             app:srcCompat="@mipmap/ic_launcher_play"
             android:layout_alignParentTop="true"
             android:layout_alignParentStart="true" />

@@ -45,6 +45,7 @@ public class RestFragment extends Fragment {
         super.onCreate(savedInstanceState);
 
     }
+    TextView number_text;
     Button button_coundown,btn_exersice;
     ImageView view_exersice;
     MediaPlayer mp;
@@ -53,10 +54,12 @@ public class RestFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_rest, container, false);
         button_coundown = (Button) rootView.findViewById(R.id.button_coundown);
+        number_text = (TextView) rootView.findViewById(R.id.number_text);
         btn_exersice = (Button) rootView.findViewById(R.id.btn_exersice);
         mp = MediaPlayer.create(this.getActivity(),R.raw.track1);
         mp.start();
         String text = getContext().getPackageName();
+        number_text.setText(""+id_exersice+"/"+list_image.size());
         btn_exersice.setText("Exersice"+id_exersice);
         int imageKey = getResources().getIdentifier(list_image.get(id_exersice), "drawable", getContext().getPackageName());
        // view_exersice =(ImageView) rootView.findViewById(R.id.image_exersice);
@@ -72,7 +75,7 @@ public class RestFragment extends Fragment {
                 mp.stop();
                 ExersiceFragment fragment = null;
 
-                Drawable img = getResources().getDrawable(R.drawable.fitness);
+                Drawable img = getResources().getDrawable(R.drawable.fitness1);
                 String pathImage = img.toString();
                 String path = Environment.getExternalStorageDirectory()+ File.separator+ "/Images/test.jpg";
                 fragment = new ExersiceFragment(id_exersice,path);

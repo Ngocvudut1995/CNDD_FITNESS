@@ -27,13 +27,16 @@ import com.example.vudang.fitness.R;
 import java.io.File;
 import java.util.ArrayList;
 
+import pl.droidsonroids.gif.GifImageView;
+
 /**
  * A simple {@link Fragment} subclass.
  */
 public class ExersiceFragment extends Fragment {
 
     TextView txt_countdown,text_exersice;
-    ImageView view_exersice;
+   // ImageView view_exersice;
+    GifImageView view_exersice;
     MediaPlayer mp;
     static int id_exersice;
     static ArrayList<String> list_image = new ArrayList<>();
@@ -73,7 +76,7 @@ public class ExersiceFragment extends Fragment {
         String text = getContext().getPackageName();
         text_exersice.setText("Hello"+id_exersice);
         int imageKey = getResources().getIdentifier(list_image.get(id_exersice), "drawable", getContext().getPackageName());
-        view_exersice =(ImageView) rootView.findViewById(R.id.image_exersice);
+        view_exersice =(GifImageView) rootView.findViewById(R.id.image_exersice);
        view_exersice.setImageResource(imageKey);
         new CountDownTimer(31000, 1000) { // adjust the milli seconds here
 
@@ -90,7 +93,7 @@ public class ExersiceFragment extends Fragment {
                     return;
                 }
                 id_exersice = id_exersice + 1;
-                Drawable img = getResources().getDrawable(R.drawable.fitness);
+                Drawable img = getResources().getDrawable(R.drawable.fitness1);
                 String pathImage = img.toString();
                 String path = Environment.getExternalStorageDirectory()+File.separator+ "/Images/test.jpg";
                 fragment = new RestFragment(id_exersice,path);
