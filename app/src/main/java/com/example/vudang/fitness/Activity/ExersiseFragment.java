@@ -24,6 +24,7 @@ import android.widget.TextView;
 
 import com.example.vudang.fitness.Model.MyApp;
 import com.example.vudang.fitness.Model.Setting;
+import com.example.vudang.fitness.Model.SubExersise;
 import com.example.vudang.fitness.R;
 
 import java.io.File;
@@ -34,26 +35,37 @@ import pl.droidsonroids.gif.GifImageView;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class ExersiceFragment extends Fragment {
+public class ExersiseFragment extends Fragment {
 
     TextView txt_countdown,text_exersice;
    // ImageView view_exersice;
     GifImageView view_exersice;
     MediaPlayer mp;
     static int id_exersice;
-    static ArrayList<String> list_image = new ArrayList<>();
-    String text_exer;
+   static int size_list;
+    SubExersise ex;
     MyApp myapp;
-    public ExersiceFragment(ArrayList list) {
+    public ExersiseFragment(int size) {
         this.id_exersice = 0;
-        this.list_image = list;
-
+        this.size_list = size;
         // Required empty public constructor
     }
 
-    public ExersiceFragment(int id_exersice, String text) {
+    @Override
+    public void onStop() {
+        System.out.println("Stop Fragment");
+        super.onStop();
+    }
+
+    @Override
+    public void onDestroy() {
+        System.out.println("Destroy Fragment");
+        super.onDestroy();
+    }
+
+    public ExersiseFragment(int id_exersice, SubExersise ex) {
         this.id_exersice = id_exersice;
-        this.text_exer = text;
+        this.ex = ex;
     }
 
     private FragmentDrawer.FragmentDrawerListener drawerListener;
@@ -78,8 +90,8 @@ public class ExersiceFragment extends Fragment {
         mp = MediaPlayer.create(this.getActivity(),R.raw.track1);
       //  mp.start();
         String text = getContext().getPackageName();
-        text_exersice.setText("Hello"+id_exersice);
-        int imageKey = getResources().getIdentifier(list_image.get(id_exersice), "drawable", getContext().getPackageName());
+        text_exersice.setText(""+ex.getNameItemExersise());
+        int imageKey = getResources().getIdentifier(ex.getImage(), "drawable", getContext().getPackageName());
         view_exersice =(GifImageView) rootView.findViewById(R.id.image_exersice);
        view_exersice.setImageResource(imageKey);
         new CountDownTimer(myapp.getSetting().getTime_running()*1000, 1000) { // adjust the milli seconds here
@@ -92,15 +104,12 @@ public class ExersiceFragment extends Fragment {
             public void onFinish() {
                 mp.stop();
                 RestFragment fragment = null;
-                if(id_exersice == list_image.size()-1){
+                if(id_exersice == size_list - 1){
                     txt_countdown.setText("done!");
                     return;
                 }
                 id_exersice = id_exersice + 1;
-                Drawable img = getResources().getDrawable(R.drawable.fitness1);
-                String pathImage = img.toString();
-                String path = Environment.getExternalStorageDirectory()+File.separator+ "/Images/test.jpg";
-                fragment = new RestFragment(id_exersice,path);
+                fragment = new RestFragment(id_exersice);
 
                 if (fragment != null) {
                     FragmentManager fragmentManager = getFragmentManager();

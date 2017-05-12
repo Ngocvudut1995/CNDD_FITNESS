@@ -1,10 +1,8 @@
 package com.example.vudang.fitness.Activity;
 
 import android.app.Activity;
-import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Environment;
@@ -19,7 +17,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.vudang.fitness.MainActivity;
+import com.example.vudang.fitness.Model.DBHandler;
+import com.example.vudang.fitness.Model.ItemExercise;
 import com.example.vudang.fitness.Model.MyApp;
+import com.example.vudang.fitness.Model.SubExersise;
 import com.example.vudang.fitness.R;
 
 import java.io.File;
@@ -29,17 +31,19 @@ import java.util.ArrayList;
 public class RestFragment extends Fragment {
 
     static int id_exersice;
-    static ArrayList<String> list_image = new ArrayList<>();
-    public RestFragment(ArrayList list) {
+    static ArrayList<SubExersise> list_item = new ArrayList<>();
+    SubExersise ex;
+    public RestFragment(ArrayList<SubExersise> list) {
         // Required empty public constructor
-        this.id_exersice = 0;
-        this.list_image = list;
-        ExersiceFragment fragment = new ExersiceFragment(list);
+        this.id_exersice =0;
+        this.list_item = list;
+        ex = list_item.get(id_exersice);
+        ExersiseFragment fragment = new ExersiseFragment(list.size());
     }
 
-    public RestFragment(int id_exersice, String text) {
+    public RestFragment(int id_exersice) {
         this.id_exersice = id_exersice;
-
+        ex = list_item.get(id_exersice);
     }
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -62,11 +66,11 @@ public class RestFragment extends Fragment {
         mp = MediaPlayer.create(this.getActivity(),R.raw.track1);
         //mp.start();
         String text = getContext().getPackageName();
-        number_text.setText(""+id_exersice+"/"+list_image.size());
-        btn_exersice.setText("Exersice"+id_exersice);
-        int imageKey = getResources().getIdentifier(list_image.get(id_exersice), "drawable", getContext().getPackageName());
-       // view_exersice =(ImageView) rootView.findViewById(R.id.image_exersice);
-      //  view_exersice.setImageResource(imageKey);
+        number_text.setText(""+(id_exersice+1)+"/"+list_item.size());
+        btn_exersice.setText(""+ex.getNameItemExersise());
+        int imageKey = getResources().getIdentifier(""+ex.getImage(), "drawable", getContext().getPackageName());
+        view_exersice =(ImageView) rootView.findViewById(R.id.imageView);
+        view_exersice.setImageResource(imageKey);
         new CountDownTimer(myapp.getSetting().getTime_break()*1000, 1000) { // adjust the milli seconds here
 
             public void onTick(long millisUntilFinished) {
@@ -76,12 +80,12 @@ public class RestFragment extends Fragment {
 
             public void onFinish() {
                 mp.stop();
-                ExersiceFragment fragment = null;
+                ExersiseFragment fragment = null;
 
                 Drawable img = getResources().getDrawable(R.drawable.fitness1);
                 String pathImage = img.toString();
                 String path = Environment.getExternalStorageDirectory()+ File.separator+ "/Images/test.jpg";
-                fragment = new ExersiceFragment(id_exersice,path);
+                fragment = new ExersiseFragment(id_exersice,ex);
 
                 if (fragment != null) {
                     FragmentManager fragmentManager = getFragmentManager();

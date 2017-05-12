@@ -97,7 +97,7 @@
                         android:textAlignment="center"
                         android:background="@android:color/transparent"
                         android:layout_gravity="fill_horizontal"
-                        android:id="@+id/button2"
+                        android:id="@+id/btn_exersice"
                         android:textColor="#0263da"
                         />
                 </GridLayout>

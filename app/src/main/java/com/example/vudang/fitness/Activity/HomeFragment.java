@@ -16,16 +16,26 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.example.vudang.fitness.Model.DBHandler;
+import com.example.vudang.fitness.Model.Exersice;
+import com.example.vudang.fitness.Model.SubExersise;
 import com.example.vudang.fitness.R;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 
 public class HomeFragment extends Fragment {
     public HomeFragment() {
+
+    }
+    public HomeFragment(Exersice ex) {
+        this.exersice = ex;
         // Required empty public constructor
     }
+    Exersice exersice;
     private ImageButton btn_play;
+    private Button btn_exersise;
     private View containerView;
     private FragmentDrawer.FragmentDrawerListener drawerListener;
     @Override
@@ -36,27 +46,37 @@ public class HomeFragment extends Fragment {
     public void setDrawerListener(FragmentDrawer.FragmentDrawerListener listener) {
         this.drawerListener = listener;
     }
-
+    DBHandler db;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
+//        if(exersice == null){
+//            db = new DBHandler(getActivity());
+//            exersice = db.getExersiceByID(1);
+//        }
+
+        btn_exersise = (Button)rootView.findViewById(R.id.btn_exersice);
+        btn_exersise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+        btn_exersise.setText(""+exersice.getNameExersice());
         btn_play = (ImageButton) rootView.findViewById(R.id.btn_play);
         btn_play.setOnClickListener(new View.OnClickListener(){
-
-
             @Override
             public void onClick(View view) {
                 RestFragment fragment = null;
-                String list__a = "R.drawable.fitness,R.drawable.ic_action_name";
-                String[] split = list__a.split(",");
-                ArrayList list_image = new ArrayList();
-                list_image.add("fitness1");
-                list_image.add("fitness2");
-                list_image.add("fitness3");
-                list_image.add("fitness4");
-                list_image.add("fitness5");
-                fragment = new RestFragment(list_image);
+                String list_itemExersice = exersice.getListIDItemExersice();
+                String[] split = list_itemExersice.split(",");
+                ArrayList list_item = new ArrayList();
+                for(int i=0;i<split.length;i++){
+                    SubExersise ex = db.getItemExersiseByID(Integer.parseInt(split[i]));
+                    list_item.add(ex);
+                }
+                fragment = new RestFragment(list_item);
 
                 if (fragment != null) {
                     FragmentManager fragmentManager = getFragmentManager();
@@ -76,6 +96,8 @@ public class HomeFragment extends Fragment {
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
+        db = new DBHandler(activity);
+        exersice = db.getExersiceByID(1);
     }
 
     @Override

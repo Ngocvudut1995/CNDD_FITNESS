@@ -41,7 +41,7 @@ public class DBHandler extends SQLiteOpenHelper {
         db.execSQL(create_table);
         for(int i = 0;i<5;i++){
             insert ="INSERT INTO ItemExersice (NameItemExersice,Image) " +
-                    "VALUES ( 'Exersice "+i+1+"', 'fitneess"+i+1+"')";
+                    "VALUES ( 'Exersice "+(i+1)+"', 'fitness"+(i+1)+"')";
             db.execSQL(insert);
         }
         create_table = "CREATE TABLE Setting (TimeRunning INTEGER ,TimeBreaking INTEGER,Sound INTEGER, " +
@@ -72,6 +72,38 @@ public class DBHandler extends SQLiteOpenHelper {
 
         db.insert(TABLE_EXERSICE, null, values);
         db.close(); // Closing database connection
+    }
+    // Get Exersice by id
+    public Exersice getExersiceByID(int id) {
+        Exersice ex = new Exersice();
+        String selectQuery = "SELECT * FROM " + TABLE_EXERSICE+" where IDExersice = "+id;
+        if(db == null || !db.isOpen()) {
+            db = getReadableDatabase();
+        }
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+                ex.setIDExersice(cursor.getInt(0));
+                ex.setNameExersice(cursor.getString(1));
+                ex.setListIDItemExersice(cursor.getString(2));
+        }
+        return ex;
+    }
+    // Get Exersice by id
+    public SubExersise getItemExersiseByID(int id) {
+        SubExersise ex = new SubExersise();
+        String selectQuery = "SELECT * FROM ItemExersice where IDItemExersice = "+id;
+        if(db == null || !db.isOpen()) {
+            db = getReadableDatabase();
+        }
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            ex.setIDItemExersise(cursor.getInt(0));
+            ex.setNameItemExersise(cursor.getString(1));
+            ex.setImage(cursor.getString(2));
+        }
+        return ex;
     }
     // Get on Exersice
     public List<Exersice> getAllExersice() {
@@ -130,14 +162,10 @@ public class DBHandler extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(selectQuery, null);
         // looping through all rows and adding to list
         if (cursor.moveToFirst()) {
-
-
                 setting.setTime_running(cursor.getInt(0));
                 setting.setTime_break(cursor.getInt(1));
                 setting.setSound(cursor.getInt(2)>0);
             setting.setColor(cursor.getString(3));
-
-
         }
 
         return setting;

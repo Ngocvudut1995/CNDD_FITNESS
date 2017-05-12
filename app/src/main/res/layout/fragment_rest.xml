@@ -85,15 +85,16 @@
                 <LinearLayout
                     android:layout_columnWeight="1"
                     android:layout_rowWeight="1"
-                    >
+                    android:layout_width="200dp"
+                    android:layout_height="100dp">
 
                     <ImageView
-                        android:layout_width="wrap_content"
+                        android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:srcCompat="@android:color/transparent"
                         android:id="@+id/imageView"
                         android:layout_weight="1"
-                        android:background="@mipmap/ic_launcher"/>
+                       />
                 </LinearLayout>
                 <GridLayout
                     android:layout_columnWeight="1"
