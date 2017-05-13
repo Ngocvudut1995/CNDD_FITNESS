@@ -9,9 +9,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.example.vudang.fitness.Apdater.ItemDetailAdapter;
 import com.example.vudang.fitness.Model.DBHandler;
-import com.example.vudang.fitness.Model.Exersice;
-import com.example.vudang.fitness.Model.ItemDetail;
-import com.example.vudang.fitness.Model.ItemExersice;
+
 import com.example.vudang.fitness.Model.SubExersise;
 import com.example.vudang.fitness.R;
 
@@ -25,7 +23,7 @@ public class DetailActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     DBHandler db;
     Context context;
-    ArrayList<ItemExersice> arrayList=new ArrayList<>();
+    ArrayList<SubExersise> arrayList=new ArrayList<>();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

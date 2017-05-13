@@ -13,10 +13,15 @@
         android:layout_column="0"
         android:layout_gravity="center"
         android:textAlignment="center">
-        <ImageView
+        <pl.droidsonroids.gif.GifImageView
             android:layout_width="80dp"
             android:layout_height="90dp"
-            android:id="@+id/imgdetail" />
+            android:id="@+id/imgdetail"
+            />
+        <!--<ImageView-->
+            <!--android:layout_width="80dp"-->
+            <!--android:layout_height="90dp"-->
+            <!--android:id="@+id/imgdetail" />-->
     </RelativeLayout>
     <RelativeLayout
         android:layout_row="1"

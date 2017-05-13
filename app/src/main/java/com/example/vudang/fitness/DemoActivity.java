@@ -36,7 +36,7 @@ import java.util.concurrent.TimeUnit;
 public class DemoActivity extends AppCompatActivity {
    // private Chronometer chronometer;
 
-    static private PendingIntent pendingIntent;
+     private PendingIntent pendingIntent;
     Button set_reminder,unset_reminder;
     TimePicker timePicker;
     TextView txt_status;

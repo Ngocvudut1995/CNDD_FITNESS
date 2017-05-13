@@ -8,11 +8,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.vudang.fitness.Model.ItemDetail;
 import com.example.vudang.fitness.Model.SubExersise;
 import com.example.vudang.fitness.R;
 
 import java.util.ArrayList;
+
+import pl.droidsonroids.gif.GifImageView;
 
 /**
  * Created by TU on 5/11/2017.
@@ -37,7 +38,8 @@ public class ItemDetailAdapter extends RecyclerView.Adapter<ItemDetailAdapter.Vi
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.txtName.setText(""+itemDetail.get(position).getNameItemExersise());
-        holder.imgHinh.setImageResource(Integer.parseInt(itemDetail.get(position).getImage()));
+        int imageKey = context.getResources().getIdentifier(itemDetail.get(position).getImage(), "drawable", context.getPackageName());
+        holder.imgHinh.setImageResource(imageKey);
     }
 
     @Override
@@ -47,11 +49,11 @@ public class ItemDetailAdapter extends RecyclerView.Adapter<ItemDetailAdapter.Vi
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView txtName;
-        ImageView imgHinh;
+        GifImageView imgHinh;
         public ViewHolder(View itemView) {
             super(itemView);
             txtName=(TextView) itemView.findViewById(R.id.txt_nameDetail);
-            imgHinh=(ImageView) itemView.findViewById(R.id.imgdetail);
+            imgHinh=(GifImageView) itemView.findViewById(R.id.imgdetail);
         }
     }
 }

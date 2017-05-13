@@ -43,8 +43,8 @@ public class DemoTu extends AppCompatActivity {
         db=new DBHandler(this);
         exersicesList=(ArrayList<Exersice>) db.getAllExersice();
         //System.out.println(exersicesList.get(0).getIDExersice());
-        ItemExerciseAdapter itemDetailAdapter=new ItemExerciseAdapter(exersicesList,getApplicationContext());
-        recyclerView.setAdapter(itemDetailAdapter);
+      //  ItemExerciseAdapter itemDetailAdapter=new ItemExerciseAdapter(exersicesList,getApplicationContext());
+       // recyclerView.setAdapter(itemDetailAdapter);
 
     }
 //    public void initView(){

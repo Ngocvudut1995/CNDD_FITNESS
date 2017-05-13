@@ -34,7 +34,7 @@ public class DBHandler extends SQLiteOpenHelper {
                 "ListItemExersice  TEXT" + ")";
         db.execSQL(create_table);
         String insert = "INSERT INTO Exersice (NameExersice,ListItemExersice)" +
-                "VALUES ( 'Full Body', '1,2,3,4,5,6')";
+                "VALUES ( 'Full Body', '1,2,3,4,5')";
         db.execSQL(insert);
         create_table = "CREATE TABLE ItemExersice (IDItemExersice INTEGER PRIMARY KEY AUTOINCREMENT,NameItemExersice TEXT," +
                                "Image  TEXT)";

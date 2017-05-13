@@ -60,7 +60,17 @@ public class HomeFragment extends Fragment {
         btn_exersise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                SelectFragment fragment = new SelectFragment();
 
+                if (fragment != null) {
+                    FragmentManager fragmentManager = getFragmentManager();
+                    FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.container_body, fragment).addToBackStack("fragBack");
+                    fragmentTransaction.commit();
+
+                    // set the toolbar title
+                    ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Exersise");
+                }
             }
         });
         btn_exersise.setText(""+exersice.getNameExersice());

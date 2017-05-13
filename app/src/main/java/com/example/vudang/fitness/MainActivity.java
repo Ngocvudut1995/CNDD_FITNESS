@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -15,15 +14,14 @@ import android.view.View;
 import android.widget.Toast;
 
 import com.example.vudang.fitness.Activity.FragmentDrawer;
-import com.example.vudang.fitness.Activity.FriendFragment;
 import com.example.vudang.fitness.Activity.HomeFragment;
+import com.example.vudang.fitness.Activity.ListExersiseFragment;
 import com.example.vudang.fitness.Activity.ReminderFragment;
+import com.example.vudang.fitness.Activity.SelectFragment;
 import com.example.vudang.fitness.Activity.SettingFragment;
 import com.example.vudang.fitness.Model.DBHandler;
 import com.example.vudang.fitness.Model.MyApp;
 import com.example.vudang.fitness.Model.Setting;
-
-import java.util.Set;
 
 public class MainActivity extends AppCompatActivity  implements FragmentDrawer.FragmentDrawerListener{
     private Toolbar mToolbar;
@@ -123,8 +121,12 @@ public class MainActivity extends AppCompatActivity  implements FragmentDrawer.F
                 title = getString(R.string.title_home);
                 break;
             case 1:
-                fragment = new FriendFragment();
-                title = getString(R.string.title_friends);
+                fragment = new SelectFragment();
+                title = getString(R.string.title_exersise);
+                break;
+            case 3:
+                fragment = new ReminderFragment();
+                title = getString(R.string.title_reminder);
                 break;
             case 2:
                 fragment = new SettingFragment();
