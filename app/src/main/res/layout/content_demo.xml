@@ -1,73 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
+
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:orientation="vertical"
+
+    android:layout_width="fill_parent"
+
+    android:layout_height="fill_parent"
+
     >
-    <pl.droidsonroids.gif.GifImageView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:src="@drawable/demogif"
+
+    <TextView
+
+        android:layout_width="fill_parent"
+
+        android:layout_height="wrap_content"
+
+        android:text="Hello"
 
         />
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
+
+    <Button
+
+        android:id="@+id/startalarm"
+
+        android:layout_width="fill_parent"
+
+        android:layout_height="wrap_content"
+
+        android:text="Start"
+
+        />
+
+    <Button
+
+        android:id="@+id/cancelalarm"
+
+        android:layout_width="fill_parent"
+
+        android:layout_height="wrap_content"
+
+        android:text="Cancel"
+
+        />
+
+</LinearLayout>
+<!--<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+    <!--android:orientation="vertical" android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent"-->
+    <!--&gt;-->
+    <!--<pl.droidsonroids.gif.GifImageView-->
         <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="55dp">-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:src="@drawable/demogif"-->
 
-        <!--<TextView-->
-            <!--android:text="Theme"-->
-            <!--android:textSize="25dp"-->
-            <!--android:layout_marginLeft="30dp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:id="@+id/textView"-->
-            <!--android:gravity="center"/>-->
+        <!--/>-->
+    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;android:orientation="horizontal"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="55dp">&ndash;&gt;-->
 
-        <!--<Spinner-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:layout_marginLeft="25dp"-->
-            <!--android:layout_marginRight="25dp"-->
-            <!--android:id="@+id/spinner"-->
-            <!--android:layout_weight="1" android:entries="@array/country_arrays"-->
-            <!--android:prompt="@string/country_prompt"-->
-            <!--/>-->
-    <!--</LinearLayout>-->
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="55dp">-->
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="Theme"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textSize="25dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="30dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/textView"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:gravity="center"/>&ndash;&gt;-->
 
-        <!--<TextView-->
-            <!--android:text="Time for each movement"-->
-            <!--android:textSize="25dp"-->
-            <!--android:layout_marginLeft="30dp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
+        <!--&lt;!&ndash;<Spinner&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="25dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginRight="25dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/spinner"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_weight="1" android:entries="@array/country_arrays"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:prompt="@string/country_prompt"&ndash;&gt;-->
+            <!--&lt;!&ndash;/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;android:orientation="horizontal"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="55dp">&ndash;&gt;-->
 
-            <!--android:gravity="center"/>-->
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="Time for each movement"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textSize="25dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="30dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+
+            <!--&lt;!&ndash;android:gravity="center"/>&ndash;&gt;-->
 
 
-    <!--</LinearLayout>-->
-    <!--<LinearLayout-->
-        <!--android:orientation="horizontal"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="55dp">-->
+    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+    <!--&lt;!&ndash;<LinearLayout&ndash;&gt;-->
+        <!--&lt;!&ndash;android:orientation="horizontal"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+        <!--&lt;!&ndash;android:layout_height="55dp">&ndash;&gt;-->
 
 
-        <!--<SeekBar-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent"-->
-            <!--android:id="@+id/seekBar4"-->
-            <!--android:layout_weight="1"-->
-            <!--android:max="100"/>-->
-        <!--<TextView-->
-            <!--android:text="Time for each movement"-->
-            <!--android:textSize="25dp"-->
-            <!--android:layout_marginLeft="30dp"-->
-            <!--android:layout_width="wrap_content"-->
-            <!--android:layout_height="match_parent"-->
+        <!--&lt;!&ndash;<SeekBar&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/seekBar4"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_weight="1"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:max="100"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;<TextView&ndash;&gt;-->
+            <!--&lt;!&ndash;android:text="Time for each movement"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:textSize="25dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_marginLeft="30dp"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="wrap_content"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
 
-            <!--android:gravity="center"/>-->
-    <!--</LinearLayout>-->
-</RelativeLayout>
+            <!--&lt;!&ndash;android:gravity="center"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;</LinearLayout>&ndash;&gt;-->
+<!--</RelativeLayout>-->

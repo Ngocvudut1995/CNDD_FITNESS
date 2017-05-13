@@ -104,7 +104,7 @@ public class ExersiseFragment extends Fragment {
             public void onFinish() {
                 mp.stop();
                 RestFragment fragment = null;
-                if(id_exersice == size_list - 1){
+                if(id_exersice == size_list - 2){
                     txt_countdown.setText("done!");
                     return;
                 }

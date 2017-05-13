@@ -81,7 +81,7 @@ public class HomeFragment extends Fragment {
                 if (fragment != null) {
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.container_body, fragment);
+                    fragmentTransaction.replace(R.id.container_body, fragment).addToBackStack("fragBack");
                     fragmentTransaction.commit();
 
                     // set the toolbar title

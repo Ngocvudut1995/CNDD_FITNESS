@@ -58,7 +58,9 @@ public class RestFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View rootView = inflater.inflate(R.layout.fragment_rest, container, false);
+
         myapp = (MyApp) getActivity().getApplicationContext();
         button_coundown = (Button) rootView.findViewById(R.id.button_coundown);
         number_text = (TextView) rootView.findViewById(R.id.number_text);
@@ -75,24 +77,21 @@ public class RestFragment extends Fragment {
 
             public void onTick(long millisUntilFinished) {
                 button_coundown.setText(""+millisUntilFinished/1000);
-//
             }
 
             public void onFinish() {
                 mp.stop();
-                ExersiseFragment fragment = null;
 
+                ExersiseFragment fragment = null;
                 Drawable img = getResources().getDrawable(R.drawable.fitness1);
                 String pathImage = img.toString();
                 String path = Environment.getExternalStorageDirectory()+ File.separator+ "/Images/test.jpg";
                 fragment = new ExersiseFragment(id_exersice,ex);
-
                 if (fragment != null) {
                     FragmentManager fragmentManager = getFragmentManager();
                     FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
                     fragmentTransaction.replace(R.id.container_body, fragment);
                     fragmentTransaction.commit();
-
                     //     set the toolbar title
                     ((AppCompatActivity)getActivity()).getSupportActionBar().setTitle("Exersice");
                     // txt_countdown.setText("done!");
