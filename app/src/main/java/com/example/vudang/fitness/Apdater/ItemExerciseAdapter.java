@@ -1,6 +1,7 @@
 package com.example.vudang.fitness.Apdater;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,20 +10,24 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.vudang.fitness.Activity.DetailActivity;
+import com.example.vudang.fitness.Model.DBHandler;
+import com.example.vudang.fitness.Model.Exersice;
 import com.example.vudang.fitness.Model.ItemExercise;
 import com.example.vudang.fitness.R;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by TU on 5/10/2017.
  */
 
 public class ItemExerciseAdapter extends RecyclerView.Adapter<ItemExerciseAdapter.ViewHolder>{
-    ArrayList<ItemExercise> itemExercises = new ArrayList<>();
-    Context context;
+    private ArrayList<Exersice> itemExercises = new ArrayList<>();
+    private Context context;
 
-    public ItemExerciseAdapter(ArrayList<ItemExercise> itemExercises, Context context) {
+    public ItemExerciseAdapter(ArrayList<Exersice> itemExercises, Context context) {
         this.itemExercises = itemExercises;
         this.context = context;
     }
@@ -36,9 +41,9 @@ public class ItemExerciseAdapter extends RecyclerView.Adapter<ItemExerciseAdapte
 
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
-        holder.txtName.setText(""+itemExercises.get(position).getName());
-        holder.txtDecription.setText(""+itemExercises.get(position).getDecription());
-        holder.imgHinh.setImageResource(itemExercises.get(position).getImage());
+        holder.txtName.setText(""+itemExercises.get(position).getNameExersice());
+        holder.txtDecription.setText(""+itemExercises.get(position).getListIDItemExersice());
+        holder.imgHinh.setImageResource(R.drawable.fitness1);
     }
 
     @Override
@@ -50,11 +55,26 @@ public class ItemExerciseAdapter extends RecyclerView.Adapter<ItemExerciseAdapte
         TextView txtName;
         TextView txtDecription;
         ImageView imgHinh;
-        public ViewHolder(View itemView) {
+        private final Context context;
+        public ViewHolder(final View itemView) {
             super(itemView);
             txtName=(TextView) itemView.findViewById(R.id.txt_nameExcersice);
             txtDecription=(TextView) itemView.findViewById(R.id.txt_decription);
             imgHinh=(ImageView) itemView.findViewById(R.id.imgHinh);
+            context= itemView.getContext();
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    DBHandler db=new DBHandler(context);
+                    int i=getAdapterPosition()+1;
+                    Exersice exersice= db.getExersiceByID(i);
+                    String str=exersice.getListIDItemExersice();
+                    Intent intent=new Intent(context,DetailActivity.class);
+                    intent.putExtra("id",str);
+                    context.startActivity(intent);
+                }
+            });
         }
+
     }
 }

@@ -3,6 +3,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="100dp">
+    <!--android:onClick="getDetail"-->
     <GridLayout
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -19,7 +20,7 @@
                 android:id="@+id/imgHinh"
                 android:layout_weight="1"/>
         </LinearLayout>
-            <!--android:background="@mipmap/ic_launcher"-->
+        <!--android:background="@mipmap/ic_launcher"-->
 
 
         <GridLayout
