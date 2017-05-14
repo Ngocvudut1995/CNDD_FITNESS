@@ -87,14 +87,20 @@
                     android:layout_rowWeight="1"
                     android:layout_width="200dp"
                     android:layout_height="100dp">
-
-                    <ImageView
+                    <pl.droidsonroids.gif.GifImageView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         app:srcCompat="@android:color/transparent"
                         android:id="@+id/imageView"
                         android:layout_weight="1"
-                       />
+                        />
+                    <!--<ImageView-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--app:srcCompat="@android:color/transparent"-->
+                        <!--android:id="@+id/imageView"-->
+                        <!--android:layout_weight="1"-->
+                       <!--/>-->
                 </LinearLayout>
                 <GridLayout
                     android:layout_columnWeight="1"

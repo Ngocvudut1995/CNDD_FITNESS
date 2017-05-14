@@ -27,6 +27,8 @@ import com.example.vudang.fitness.R;
 import java.io.File;
 import java.util.ArrayList;
 
+import pl.droidsonroids.gif.GifImageView;
+
 
 public class RestFragment extends Fragment {
 
@@ -52,7 +54,7 @@ public class RestFragment extends Fragment {
     }
     TextView number_text;
     Button button_coundown,btn_exersice;
-    ImageView view_exersice;
+    GifImageView view_exersice;
     MediaPlayer mp;
     MyApp myapp;
     @Override
@@ -71,7 +73,7 @@ public class RestFragment extends Fragment {
         number_text.setText(""+(id_exersice+1)+"/"+list_item.size());
         btn_exersice.setText(""+ex.getNameItemExersise());
         int imageKey = getResources().getIdentifier(""+ex.getImage(), "drawable", getContext().getPackageName());
-        view_exersice =(ImageView) rootView.findViewById(R.id.imageView);
+        view_exersice =(GifImageView) rootView.findViewById(R.id.imageView);
         view_exersice.setImageResource(imageKey);
         new CountDownTimer(myapp.getSetting().getTime_break()*1000, 1000) { // adjust the milli seconds here
 

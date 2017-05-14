@@ -58,7 +58,7 @@ public class ItemExerciseAdapter extends RecyclerView.Adapter<ItemExerciseAdapte
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.txtName.setText(""+itemExercises.get(position).getNameExersice());
         holder.txtDecription.setText(""+itemExercises.get(position).getListIDItemExersice());
-        holder.imgHinh.setImageResource(R.drawable.fitness1);
+        holder.imgHinh.setImageResource(R.drawable.workout);
     }
 
     @Override
